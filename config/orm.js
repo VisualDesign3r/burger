@@ -16,14 +16,29 @@ var orm = {
     });
   },
 
-  selectAll: function() {
+  selectAll: function(cb) {
       var queryString = "SELECT * FROM burger";
 
-      connection.query(queryString, [tableInput, colToSearch, valOfCol], function(err, result) {
+      connection.query(queryString, function(err, result) {
         if (err) throw err;
-        console.log(result);
+        cb(result)
       });
 
+  },
+
+  createNew: function(name, cb){
+    connection.query(`INSERT INTO burger (burger_name) VALUES ('${name}')`, function(err, result){
+      if (err) throw err;
+      console.log(result)
+      cb()
+    })
+  },
+
+  update: function(id, cb){
+    connection.query(`UPDATE burger SET devoured = 1 WHERE id = ${id}`, function(err, data){
+      if(err) throw err;
+      cb()
+    })
   },
 
   selectAndOrder: function(whatToSelect, table, orderCol) {

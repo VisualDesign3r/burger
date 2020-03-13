@@ -1,0 +1,40 @@
+<div class="jumbotron">
+    <h1 class='display-4'>EAT DA BURGER APP!</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <input type="text" style='width:40%;margin:auto;' id="burgerName">
+        <button class="btn btn-secondary" id="submit">Submit</button>
+    </div>
+<div class="row">
+    <div class="col-6">
+        <div class="row">
+            <h2>Burgers To Eat</h2>
+        </div>
+
+        {{#each burgers}}
+        {{#unless devoured}}
+        <span>
+            <h3>{{burger_name}}</h3>
+        </span>
+        <button class='btn btn-primary eat' id={{id}}>Eat Now!</button>
+        {{/unless}}
+        {{/each}}
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <h2>Burgers You Ate</h2>
+        </div>
+
+        {{#each burgers}}
+        {{#if devoured}}
+        <span>
+            <h3>{{burger_name}}</h3>
+        </span>
+        <button class='btn btn-disabled'>You Ate This Burger!</button>
+        {{/if}}
+        {{/each}}
+    </div>
+</div>
+</div>
