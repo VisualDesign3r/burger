@@ -11,7 +11,7 @@ router.get('/', function(req,res){
 router.post('/api/burger', function(req,res){
     burger.createNew(req.body.name, function(){
         console.log('redirecting!')
-        res.send('ok')
+        res.send('ok!')
     })
 })
 
