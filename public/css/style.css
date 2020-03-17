@@ -1,0 +1,16 @@
+.jumbotron {
+    text-align: center;
+    background-image: url("https://library.kissclipart.com/20180831/tsq/kissclipart-hamburger-clipart-hamburger-button-clip-art-4a4f2717d8f9c21e.png");
+    background-size: 17%;
+    font-weight: 900;
+    color: red;
+    font-size: 50px;
+    height: 220px;
+}
+
+.display-4 {
+    text-align: center;
+    color: seagreen;
+    font-weight: 500;
+}
+
